@@ -1,0 +1,23 @@
+button.popup__button.popup__button_edit {
+    width: 100%;
+    height: 50px;
+    margin-top: 48px;
+    font-family: Inter;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 22px;
+    background: black;
+    color: white;
+}
+button.popup__button.popup__button_edit:disabled {
+    border: 1px solid rgba(0, 0, 0, .2);
+    color: rgba(0, 0, 0, .2);
+    background: white;
+    font-size: 18px;
+}
+
+
+button.popup__button_edit:focus {
+    border: 1px solid greenyellow;
+}
