@@ -1,0 +1,20 @@
+{
+  "name": "sprint-11.github.io",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack --mode production"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KaterinaEvseeva/Sprint-11.github.io.git"
+  },
+  "author": "Katia Evseeva",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/KaterinaEvseeva/Sprint-11.github.io/issues"
+  },
+  "homepage": "https://github.com/KaterinaEvseeva/Sprint-11.github.io#readme",
+  "devDependencies": {}
+}
