@@ -1,4 +1,4 @@
-class UserInfo {
+export class UserInfo {
     constructor(form, userName, userData, avatar, api) {
       this.form = form;
       this.userName = userName;
@@ -31,18 +31,3 @@ class UserInfo {
     }
   }
 
-  // class UserInfo {
-  //   constructor(form, userName, userData) {
-  //     this.form = form;
-  //     this.userName = userName;
-  //     this.userData = userData;
-  //   }
-  //   setUserInfo() {
-  //     this.form.userName.value = this.userName.textContent;
-  //     this.form.userData.value = this.userData.textContent;
-  //   }
-  //   updateUserInfo() {
-  //     this.userName.textContent = this.form.userName.value;
-  //     this.userData.textContent = this.form.elements.userData.value;
-  //   }
-  // }
