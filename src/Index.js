@@ -1,4 +1,11 @@
-(function () {
+import './pages/style.css';
+import {Api} from './API';
+import {Card} from './Card';
+import {CardList} from './CardList';
+import {FormValidator} from './FormValidator';
+import {Popup} from './Popup';
+import {UserInfo} from './UserInfo';
+
   const placesList = document.querySelector('.places-list');
   const openButton = document.querySelector('.user-info__button');
   const editButton = document.querySelector('.user-info__button_edit');
@@ -13,8 +20,6 @@
   const popupEditProfile = new Popup(document.querySelector('.popup__edit-profile'));
   const formValidator = new FormValidator(document.querySelector('.popup__edit-profile'));
   const formValidatorCard = new FormValidator(document.querySelector('.popup__edit-card'));
-
-  // Можно лучше -- адрес и токен лучше в константы вынести
   const api = new Api({
     baseUrl: 'https://praktikum.tk/cohort9',
     headers: {
@@ -37,8 +42,6 @@
     formValidatorCard.setEventListeners();
   }
   api.getInitialCards()
-    // Надо исправить
-    // cardList используется до его определения
     .then(data => cardList.render(data))
     .catch(err => {
       console.log(`Ошибка: ${err}`);
@@ -51,8 +54,6 @@
   document.forms.new.addEventListener('submit', (event) => {
     event.preventDefault(event);
     cardList.addCard(event);
-    // У попапа есть свой метод закрытия: пользуйтесь им
-    // Надо исправить
     popupNewPlace.close(popupNewPlace);
     event.target.reset();
   })
@@ -97,5 +98,5 @@
         console.log(`Ошибка: ${err}`);
       });
   })
-})();
-import "./pages/style.css";
+
+
