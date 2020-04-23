@@ -3,9 +3,6 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const WebpackMd5Hash = require('webpack-md5-hash');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-new webpack.DefinePlugin({
-  'NODE_ENV': JSON.stringify(process.env.NODE_ENV)
-});
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const isDev = process.env.NODE_ENV === 'development';
 module.exports = {
@@ -45,7 +42,7 @@ module.exports = {
         test: /\.css$/,
         use: [
           (isDev ? 'style-loader' : MiniCssExtractPlugin.loader),
-          'css-loader',
+           { loader:'css-loader', options: { importLoaders: 2 } },
           'postcss-loader',
 
         ]
@@ -72,5 +69,8 @@ module.exports = {
     }),
         new WebpackMd5Hash(),
         new webpack.SourceMapDevToolPlugin({}),
+        new webpack.DefinePlugin({
+          'NODE_ENV': JSON.stringify(process.env.NODE_ENV)
+        })
   ]
 };
