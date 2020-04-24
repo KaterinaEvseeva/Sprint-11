@@ -21,12 +21,12 @@ import {UserInfo} from './UserInfo';
   const formValidator = new FormValidator(document.querySelector('.popup__edit-profile'));
   const formValidatorCard = new FormValidator(document.querySelector('.popup__edit-card'));
   const api = new Api({
-    baseUrl: (NODE_ENV === 'production' ? 'https://praktikum.tk/cohort9' : 'http://praktikum.tk/cohort9'),
+    baseUrl: 'https://praktikum.tk/cohort9',
     headers: {
       authorization: '1c40e787-d2f1-4812-aa9b-77e6ef33e269',
       'Content-Type': 'application/json'
     }
-   });
+  });
 
   const userInfo = new UserInfo(
     editForm, document.querySelector('.user-info__name'),
